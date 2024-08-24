@@ -83,7 +83,7 @@ Dcl-Proc LoadSubfile;
 
   EXEC SQL DECLARE empCur CURSOR FOR
               SELECT EMPNO, FIRSTNME, LASTNAME, JOB
-              FROM SAMPLE.EMPLOYEE
+              FROM EMPLOYEE
               WHERE WORKDEPT = :DEPTNO;
 
   EXEC SQL OPEN empCur;
