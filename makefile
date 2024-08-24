@@ -7,8 +7,8 @@ all: depts.sqlrpgle employees.sqlrpgle
 
 ## Targets
 
-depts.sqlrpgle: depts.dspf
-employees.sqlrpgle: emps.dspf
+depts.sqlrpgle: depts.dspf department.table
+employees.sqlrpgle: emps.dspf employee.table
 
 ## Rules
 
@@ -21,3 +21,7 @@ employees.sqlrpgle: emps.dspf
 	-system -qi "CRTSRCPF FILE($(BIN_LIB)/QDDSSRC) RCDLEN(112)"
 	system "CPYFRMSTMF FROMSTMF('./qddssrc/$*.dspf') TOMBR('/QSYS.lib/$(BIN_LIB).lib/QDDSSRC.file/$*.mbr') MBROPT(*REPLACE)"
 	system -s "CRTDSPF FILE($(BIN_LIB)/$*) SRCFILE($(BIN_LIB)/QDDSSRC) SRCMBR($*)"
+
+%.table: qddssrc/%.table
+	liblist -c $(BIN_LIB);\
+	system "RUNSQLSTM SRCSTMF('$<') COMMIT(*NONE)"
