@@ -15,3 +15,5 @@ CREATE TABLE EMPLOYEE (EMPNO       CHAR(6)         NOT NULL,
       -- BONUS       DECIMAL(9,2)            ,
       -- COMM        DECIMAL(9,2)            ,    
        PRIMARY KEY (EMPNO) )
+
+
