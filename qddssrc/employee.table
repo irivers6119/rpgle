@@ -1,39 +1,38 @@
 -- https://www.ibm.com/docs/en/i/7.3?topic=tables-employee-table-employee
+BEGIN
+      IF NOT EXISTS
+      (
+      CREATE TABLE EMPLOYEE (EMPNO       CHAR(6)         NOT NULL,
+            FIRSTNME    VARCHAR(12)     NOT NULL,
+            MIDINIT     CHAR(1)         NOT NULL,
+            LASTNAME    VARCHAR(15)     NOT NULL,
+            WORKDEPT    CHAR(3)                 ,
+            PHONENO     CHAR(4)                 ,
+            HIREDATE    DATE                    ,
+            JOB         CHAR(8)                 ,
+            EDLEVEL     SMALLINT        NOT NULL,
+            SEX         CHAR(1)                 ,
+            BIRTHDATE   DATE                    ,
+            -- SALARY      DECIMAL(9,2)            ,
+            -- BONUS       DECIMAL(9,2)            ,
+            -- COMM        DECIMAL(9,2)            ,    
+            PRIMARY KEY (EMPNO) )
 
 
- SELECT GETVARIABLE('SYSIBM.VERSION') FROM SYSIBM.SYSDUMMY1
+            /*ALTER TABLE EMPLOYEE 
+                  ADD FOREIGN KEY RED (WORKDEPT) 
+                  REFERENCES DEPARTMENT 
+                  ON DELETE SET NULL
 
-/* CREATE TABLE EMPLOYEE (EMPNO       CHAR(6)         NOT NULL,
-       FIRSTNME    VARCHAR(12)     NOT NULL,
-       MIDINIT     CHAR(1)         NOT NULL,
-       LASTNAME    VARCHAR(15)     NOT NULL,
-       WORKDEPT    CHAR(3)                 ,
-       PHONENO     CHAR(4)                 ,
-       HIREDATE    DATE                    ,
-       JOB         CHAR(8)                 ,
-       EDLEVEL     SMALLINT        NOT NULL,
-       SEX         CHAR(1)                 ,
-       BIRTHDATE   DATE                    ,
-      -- SALARY      DECIMAL(9,2)            ,
-      -- BONUS       DECIMAL(9,2)            ,
-      -- COMM        DECIMAL(9,2)            ,    
-       PRIMARY KEY (EMPNO) ) */
+            ALTER TABLE EMPLOYEE 
+                  ADD CONSTRAINT NUMBER 
+                  CHECK (PHONENO >= '0000' AND PHONENO <= '9999')*/
 
-/*ALTER TABLE EMPLOYEE
- ADD COLUMN SALARY DECIMAL(9,2)*/
+            /*CREATE UNIQUE INDEX XEMP1 
+                  ON EMPLOYEE (EMPNO)
 
-/*ALTER TABLE EMPLOYEE 
-      ADD FOREIGN KEY RED (WORKDEPT) 
-      REFERENCES DEPARTMENT 
-      ON DELETE SET NULL
-
-ALTER TABLE EMPLOYEE 
-      ADD CONSTRAINT NUMBER 
-      CHECK (PHONENO >= '0000' AND PHONENO <= '9999')*/
-
-/*CREATE UNIQUE INDEX XEMP1 
-       ON EMPLOYEE (EMPNO)
-
-CREATE INDEX XEMP2 
-       ON EMPLOYEE (WORKDEPT)*/
-
+            CREATE INDEX XEMP2 
+                  ON EMPLOYEE (WORKDEPT)*/
+      )
+      END IF
+END
