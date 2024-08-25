@@ -7,15 +7,15 @@ all: depts.sqlrpgle employees.sqlrpgle
 
 ## Targets
 
-depts.sqlrpgle: depts.dspf department.table
-employees.sqlrpgle: emps.dspf employee.table
+depts.pgm.sqlrpgle: depts.dspf department.table
+employees.pgm.sqlrpgle: emps.dspf employee.table
 
 ## Rules
 
-%.sqlrpgle: 
-	system -s "CHGATR OBJ('./qrpglesrc/$*.sqlrpgle') ATR(*CCSID) VALUE(1252)"
+%.pgm.sqlrpgle: qrpglesrc/%.pgm.sqlrpgle
+	system -s "CHGATR OBJ('$<') ATR(*CCSID) VALUE(1252)"
 	liblist -a $(LIBLIST);\
-	system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('./qrpglesrc/$*.sqlrpgle') COMMIT(*NONE) DBGVIEW(*SOURCE) OPTION(*EVENTF)"
+	system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('$<') COMMIT(*NONE) DBGVIEW(*SOURCE) OPTION(*EVENTF) COMPILEOPT('INCDIR(''qrpgleref'')')"
 
 %.dspf:
 	-system -qi "CRTSRCPF FILE($(BIN_LIB)/QDDSSRC) RCDLEN(112)"

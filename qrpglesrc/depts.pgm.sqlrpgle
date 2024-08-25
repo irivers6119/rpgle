@@ -7,7 +7,7 @@
 
       //---------------------------------------------------------------*
 
-      /copy 'qrpgleref/constants.rpgle'
+      /include 'constants.rpgleinc'
 
 
 
@@ -96,7 +96,7 @@
 
             EXEC SQL DECLARE deptCur CURSOR FOR
               SELECT DEPTNO, DEPTNAME
-              FROM DEPARTMENT;
+              FROM SAMPLE.DEPARTMENT;
 
             EXEC SQL OPEN deptCur;
 

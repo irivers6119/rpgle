@@ -7,7 +7,7 @@ End-Pi;
 
       //---------------------------------------------------------------*
 
-/copy 'qrpgleref/constants.rpgle'
+/include 'constants.rpgleinc'
 
       //---------------------------------------------------------------*
 
@@ -83,7 +83,7 @@ Dcl-Proc LoadSubfile;
 
   EXEC SQL DECLARE empCur CURSOR FOR
               SELECT EMPNO, FIRSTNME, LASTNAME, JOB
-              FROM EMPLOYEE
+              FROM SAMPLE.EMPLOYEE
               WHERE WORKDEPT = :DEPTNO;
 
   EXEC SQL OPEN empCur;
