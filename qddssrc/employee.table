@@ -1,8 +1,6 @@
 -- https://www.ibm.com/docs/en/i/7.3?topic=tables-employee-table-employee
-BEGIN
-      IF NOT EXISTS
-      (
-      CREATE TABLE EMPLOYEE (EMPNO       CHAR(6)         NOT NULL,
+
+     /* CREATE TABLE EMPLOYEE (EMPNO       CHAR(6)         NOT NULL,
             FIRSTNME    VARCHAR(12)     NOT NULL,
             MIDINIT     CHAR(1)         NOT NULL,
             LASTNAME    VARCHAR(15)     NOT NULL,
@@ -16,7 +14,7 @@ BEGIN
             -- SALARY      DECIMAL(9,2)            ,
             -- BONUS       DECIMAL(9,2)            ,
             -- COMM        DECIMAL(9,2)            ,    
-            PRIMARY KEY (EMPNO) )
+            PRIMARY KEY (EMPNO) )*/
 
 
             /*ALTER TABLE EMPLOYEE 
@@ -33,6 +31,3 @@ BEGIN
 
             CREATE INDEX XEMP2 
                   ON EMPLOYEE (WORKDEPT)*/
-      )
-      END IF
-END
