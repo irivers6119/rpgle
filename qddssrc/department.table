@@ -1,6 +1,6 @@
 --https://www.ibm.com/docs/en/i/7.3?topic=tables-department-table-department
 
-DROP TABLE DEPARTMENT;
+DROP TABLE IF EXISTS DEPARTMENT;
 
 CREATE OR REPLACE TABLE DEPARTMENT
       (DEPTNO    CHAR(3)           NOT NULL,
