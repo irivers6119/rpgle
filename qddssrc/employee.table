@@ -1,6 +1,6 @@
 -- https://www.ibm.com/docs/en/i/7.3?topic=tables-employee-table-employee
 
-DROP TABLE IF EXISTS EMPLOYEE;
+--DROP TABLE IF EXISTS EMPLOYEE;
 
 CREATE OR REPLACE TABLE EMPLOYEE
       (EMPNO       CHAR(6)         NOT NULL,
