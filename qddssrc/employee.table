@@ -15,4 +15,5 @@ CREATE TABLE EMPLOYEE
        SALARY      DECIMAL(9,2)            ,
        BONUS       DECIMAL(9,2)            ,
        COMM        DECIMAL(9,2)            ,    
-       PRIMARY KEY (EMPNO))
+       PRIMARY KEY (EMPNO)
+       )
