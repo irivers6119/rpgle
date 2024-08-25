@@ -1,5 +1,7 @@
 -- https://www.ibm.com/docs/en/i/7.3?topic=tables-employee-table-employee
 
+DROP TABLE EMPLOYEE;
+
 CREATE OR REPLACE TABLE EMPLOYEE
       (EMPNO       CHAR(6)         NOT NULL,
        FIRSTNME    VARCHAR(12)     NOT NULL,
