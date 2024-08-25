@@ -1,7 +1,5 @@
 -- https://www.ibm.com/docs/en/i/7.3?topic=tables-employee-table-employee
 
---DROP TABLE IF EXISTS EMPLOYEE;
-
 CREATE TABLE EMPLOYEE
       (EMPNO       CHAR(6)         NOT NULL,
        FIRSTNME    VARCHAR(12)     NOT NULL,
@@ -18,18 +16,3 @@ CREATE TABLE EMPLOYEE
        BONUS       DECIMAL(9,2)            ,
        COMM        DECIMAL(9,2)            ,    
        PRIMARY KEY (EMPNO))
-
---ALTER TABLE EMPLOYEE 
---      ADD FOREIGN KEY RED (WORKDEPT) 
---      REFERENCES DEPARTMENT 
---      ON DELETE SET NULL
-
---ALTER TABLE EMPLOYEE 
---      ADD CONSTRAINT NUMBER 
---      CHECK (PHONENO >= '0000' AND PHONENO <= '9999');
-
---CREATE UNIQUE INDEX XEMP1 
---     ON EMPLOYEE (EMPNO)
-
--- CREATE INDEX XEMP2 
---      ON EMPLOYEE (WORKDEPT)
